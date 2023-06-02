@@ -33,6 +33,10 @@
     }
     .total {
       font-weight: bold;
+      font-size: 20px;
+      text-transform: uppercase;
+      background-color: rgb(228, 235, 248);
+      border-top: solid black;
     }
     .highlight{
         background-color: #0d2242;
@@ -111,7 +115,7 @@
   </div>
 
   <div class="section flex">
-    <div class="w-1/2" style="width: 70%;"> <!--Taille à revoir pour moalite et prix-->
+    <div class="w-1/2" style="width: 50%;"> <!--Taille à revoir pour moalite et prix-->
         <div class="section-title">Modalité de règlement</div>
         <div class="section-content">
         <p>Prélèvement automatique</p>
@@ -119,33 +123,38 @@
             <a href="https://www.example.com" >
                 <i class="fas fa-lock mr-2"></i>
                 Payer
-              </a>
-          </button>
+            </a>
+        </button>
         </div>
     </div>
-    <div class="w-2/2">
-        <div class="section-title">Prix</div>
+    <div class="w-2/2" style="width: 50%;">
         <div class="section-content">
-        <table class="w-full border-collapse">
+        <table class="w-full border-collapse" style="text-align: right">
             <tr>
-            <td class="border px-4 py-2">Sous-total / mois</td>
-            <td class="border px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2">Sous-total / mois</td>
+            <td class="px-4 py-2"style="width: 40%;">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr>
-            <td class="border px-4 py-2">TVA 20% / mois</td>
-            <td class="border px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2">TVA 20% / mois</td>
+            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            </tr>
+            <tr>
+            <td class="px-4 py-2">Total / mois</td>
+            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            </tr>
+            <tr>
+            <td class="px-4 py-2">Payé</td>
+            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr class="total">
-            <td class="border px-4 py-2">Total / mois</td>
-            <td class="border px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2">Net à payer/mois</td>
+            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
         </table>
-        <p>Payé</p>
-        <p class="text-2xl font-bold mt-4">NET À PAYER / MOIS</p>
+        <!-- <p class="text-2xl font-bold mt-4">NET À PAYER / MOIS</p> -->
         </div>
     </div>
   </div>
-  
 
   <div class="footer">
     <p>Cette proposition commerciale est valable 1 mois à compter de sa date d’émission.</p>
