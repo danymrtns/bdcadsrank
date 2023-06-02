@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Tableau de bord</title>
+  </head>
+  <body class="bg-gray-100">
+    <%- include('navbar'); -%>
+    <div class="container mx-auto p-4">
+      <h1 class="text-2xl font-bold mb-4">Tableau de bord</h1>
+      <div class="grid grid-cols-1 gap-4">
+        <% formData.forEach((item, index) => { %>
+          <div class="p-4 bg-white rounded shadow">
+            <h2 class="text-xl font-bold mb-2"><%= item.nom %></h2>
+            <p class="text-gray-700 mb-4"><%= item.email %></p>
+            <div class="flex space-x-4">
+              <a href="/dashboard/<%= index %>" class="text-indigo-600">Voir</a>
+              <a href="/dashboard/<%= index %>/edit" class="text-indigo-600">Modifier</a>
+              <form action="/dashboard/<%= index %>?_method=DELETE" method="POST">
+                <script>
+                  function confirmDelete(index) {
+                    if (confirm("Voulez-vous vraiment supprimer cet élément ?")) {
+                      fetch(`/dashboard/${index}`, {
+                        method: 'DELETE',
+                      }).then(res => window.location.reload())
+                    }
+                  }
+                  </script>
+                <button onclick="confirmDelete(<%= index %>)" class="text-red-600">Supprimer</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bon de commande</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-... (integrity hash)" crossorigin="anonymous">
+
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    h1 {
+      text-align: left;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #4ca4fc;
+    }
+    .section-content {
+      font-size: 14px;
+    }
+    .total {
+      font-weight: bold;
+    }
+    .highlight{
+        background-color: #0d2242;
+        color: white;
+    }
+    .footer {
+      font-size: 12px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-3xl font-bold mb-8">AdsRank</h1>
+
+  <div class="section">
+    <div class="section-title">Bon de commande</div>
+    <div class="section-content">Référence et date</div>
+  </div>
+
+  <div class="section flex">
+    <div class="w-1/2">
+      <div class="section-title">Votre contact</div>
+      <div class="section-content">...</div> <!-- Remplacer les points de suspension par les coordonnées de contact -->
+    </div>
+    <div class="w-1/2">
+      <div class="section-title">Vos coordonnées</div>
+      <div class="section-content">...</div> <!-- Remplacer les points de suspension par les coordonnées du client -->
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Votre offre Google Ads Booster<br>Gestion et optimisation de votre campagne Google Ads</div>
+    <div class="section-content">
+      <table class="w-full border-collapse">
+        <tr>
+          <th class="border px-4 py-2 highlight" colspan="2">Votre offre</th>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Ciblage des mots clés les plus stratégiques</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Rédaction &amp; optimisation des annonces</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Modification illimitée de vos annonces ou mots clés</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Niveau d’accompagnement Pro<br>> Expert dédié à votre entreprise avec suivi personnalisé</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Rapport mensuel détaillé</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Diffusion et optimisation de vos campagnes au quotidien</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Offre sans engagement, résiliable à tout moment</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Création du compte et frais d’ouverture de campagne</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2" style="width: 80%;">Frais de dossier offert</td>
+          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section flex">
+    <div class="w-1/2" style="width: 70%;"> <!--Taille à revoir pour moalite et prix-->
+        <div class="section-title">Modalité de règlement</div>
+        <div class="section-content">
+        <p>Prélèvement automatique</p>
+        <button class="bg-yellow-300 text-black px-4 py-2 rounded" style="margin-top:10px; padding: 10px 40px 10px 40px">
+            <a href="https://www.example.com" >
+                <i class="fas fa-lock mr-2"></i>
+                Payer
+              </a>
+          </button>
+        </div>
+    </div>
+    <div class="w-2/2">
+        <div class="section-title">Prix</div>
+        <div class="section-content">
+        <table class="w-full border-collapse">
+            <tr>
+            <td class="border px-4 py-2">Sous-total / mois</td>
+            <td class="border px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            </tr>
+            <tr>
+            <td class="border px-4 py-2">TVA 20% / mois</td>
+            <td class="border px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            </tr>
+            <tr class="total">
+            <td class="border px-4 py-2">Total / mois</td>
+            <td class="border px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            </tr>
+        </table>
+        <p>Payé</p>
+        <p class="text-2xl font-bold mt-4">NET À PAYER / MOIS</p>
+        </div>
+    </div>
+  </div>
+  
+
+  <div class="footer">
+    <p>Cette proposition commerciale est valable 1 mois à compter de sa date d’émission.</p>
+    <p>Passé ce délai, la présente proposition devient caduque.</p>
+    <p>Le Client reconnaît que l'envoi du présent Bon de Commande par télécopie ou mail a la même valeur que celle accordée à l'original. Le présent Bon de Commande est formé à compter de sa date de signature et prévaut sur les conditions générales et/ou particulières du Client, les correspondances et/ou les propositions commerciales antérieures relatives au même objet que le présent Bon de Commande. Toute modification manuscrite des documents contractuels est considérée comme nulle.</p>
+    <p>Le signataire du présent Bon de Commande reconnaît avoir pris connaissance et approuver sans réserve l’ensemble des documents contractuels désignés ci-avant.</p>
+  </div>
+</body>
+</html>

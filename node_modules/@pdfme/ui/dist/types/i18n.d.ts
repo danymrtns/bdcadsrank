@@ -1,0 +1,25 @@
+import { Lang } from '@pdfme/common';
+declare type DictEn = typeof dictEn;
+declare const dictEn: {
+    cancel: string;
+    field: string;
+    fieldName: string;
+    require: string;
+    uniq: string;
+    inputExample: string;
+    edit: string;
+    plsInputName: string;
+    fieldMustUniq: string;
+    notUniq: string;
+    noKeyName: string;
+    fieldsList: string;
+    addNewField: string;
+    editField: string;
+    type: string;
+    errorOccurred: string;
+    errorBulkUpdateFieldName: string;
+    commitBulkUpdateFieldName: string;
+    bulkUpdateFieldName: string;
+};
+export declare const curriedI18n: (lang: Lang) => (key: keyof DictEn) => string;
+export {};
