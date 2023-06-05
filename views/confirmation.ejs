@@ -68,22 +68,25 @@
 
   <div class="section">
     <div class="section-title">Bon de commande</div>
-    <div class="section-content">Référence et date</div>
+    <div class="section-content">Référence et date
+        <p><%= orderNumber %></p>
+        <p><%= currentDate %></p>
+    </div>
   </div>
 
   <div class="section flex">
     <div class="w-1/2">
       <div class="section-title">Votre contact</div>
       <div class="section-content">
-        <% formData.forEach((item, index) => { %>
-        <p>Nom : <%= item.nom %></p>
-    <p>Email : <%= item.email %></p>
-    <% }) %>
+        <p>Nom : <%= nom %></p>
+    <p>Email : <%= email %></p>
       </div> <!-- Remplacer les points de suspension par les coordonnées de contact -->
     </div>
     <div class="w-1/2">
       <div class="section-title">Vos coordonnées</div>
-      <div class="section-content">...</div> <!-- Remplacer les points de suspension par les coordonnées du client -->
+      <div class="section-content">
+        <p>Client : <%= client %></p>
+      </div> <!-- Remplacer les points de suspension par les coordonnées du client -->
     </div>
   </div>
 
@@ -224,7 +227,25 @@
   </div>
   <div class="footer">
   </div>
-  <p>AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 1/2</p>
-
+  <p>AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
+  <script>
+    function getCurrentDate() {
+      var date = new Date();
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      
+      // Ajouter un zéro devant les jours/mois < 10
+      if (day < 10) {
+        day = '0' + day;
+      }
+      if (month < 10) {
+        month = '0' + month;
+      }
+      
+      var formattedDate = day + '/' + month + '/' + year;
+      return formattedDate;
+    }
+  </script>
 </body>
 </html>

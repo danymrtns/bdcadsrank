@@ -8,7 +8,7 @@ const formFilePath = path.join(__dirname, 'data', 'form-data.json');
 const data = require('./data/data.json');
 
 // Middleware pour traiter les données du formulaire
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 // Définir EJS comme moteur de template
 app.set('view engine', 'ejs');
@@ -44,6 +44,19 @@ app.get('/dashboard', (req, res) => {
   });
 });
 
+// Route pour la page du tableau de bord
+app.get('/test', (req, res) => {
+  fs.readFile(formFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+    } else {
+      const formData = JSON.parse(data);
+      res.render('test', { formData: formData,  data: data });
+    }
+  });
+});
+
 app.post('/submit', (req, res) => {
   const { nom, email } = req.body;
   const formData = { nom, email };
@@ -67,14 +80,31 @@ app.post('/submit', (req, res) => {
           console.error(err);
           res.sendStatus(500);
         } else {
-          res.redirect('/dashboard');
+          res.redirect('/test');
         }
       });
     }
   });
 });
 
-// Suppression data 
+// Fonction pour générer un numéro de bon de commande aléatoire
+function generateOrderNumber() {
+  const randomNumber = Math.floor(Math.random() * 1000000) + 1; // Génère un nombre aléatoire entre 1 et 1 000 000
+  const orderNumber = `ADS${randomNumber.toString().padStart(6, '0')}`; // Format du numéro de bon de commande, par exemple: CMD-000123
+  return orderNumber;
+}
+
+// Page de confirmation qui affiche les informations envoyées
+app.post('/confirmation', (req, res) => {
+  const { nom, email, client } = req.body;
+  //Date
+  const currentDate = new Date().toLocaleDateString('fr-FR');
+  //Numéro de BDC (bon de commande)
+  const orderNumber = generateOrderNumber();
+  res.render('confirmation', { nom, email, client, currentDate, orderNumber });
+});
+
+// Suppression data
 
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
