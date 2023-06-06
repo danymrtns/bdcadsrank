@@ -96,12 +96,18 @@ function generateOrderNumber() {
 
 // Page de confirmation qui affiche les informations envoyées
 app.post('/confirmation', (req, res) => {
-  const { nom, email, client } = req.body;
-  //Date
+  const { nom, email, client, montant } = req.body;
+  const montantNum = parseFloat(montant);
+  // Date
   const currentDate = new Date().toLocaleDateString('fr-FR');
-  //Numéro de BDC (bon de commande)
+  // Numéro de BDC (bon de commande)
   const orderNumber = generateOrderNumber();
-  res.render('confirmation', { nom, email, client, currentDate, orderNumber });
+  // Calcul Montant
+  const vat = montantNum * 0.2;
+  const totalAmount = montantNum + vat;
+  const monthlyPayment = totalAmount;
+
+  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber });
 });
 
 // Suppression data

@@ -155,23 +155,19 @@
         <table class="w-full border-collapse" style="text-align: right">
             <tr>
             <td class="px-4 py-2">Sous-total / mois</td>
-            <td class="px-4 py-2"style="width: 40%;">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2"style="width: 40%;"><%= montant %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr>
             <td class="px-4 py-2">TVA 20% / mois</td>
-            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2"><%= vat.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr>
             <td class="px-4 py-2">Total / mois</td>
-            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
-            </tr>
-            <tr>
-            <td class="px-4 py-2">Payé</td>
-            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2"><%= totalAmount.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr class="total">
             <td class="px-4 py-2">Net à payer/mois</td>
-            <td class="px-4 py-2">...</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-2"><%= monthlyPayment.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
         </table>
         <!-- <p class="text-2xl font-bold mt-4">NET À PAYER / MOIS</p> -->
