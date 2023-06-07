@@ -61,13 +61,6 @@
       border-bottom: solid black;
     }
 
-    p#nom,
-    p#client{
-      white-space: pre-line;
-      color: red;
-      display: inline;
-      margin-left: 5px;
-    }
   </style>
 </head>
 <body>
@@ -86,17 +79,14 @@
     <div class="w-1/2">
       <div class="section-title">Votre contact</div>
       <div class="section-content">
-        <div>
-          <h3 style="display: inline;">Nom :</h3>
-          <p id="nom"><%= nom %></p>
-        </div>
-        <p>Email : <%= email %></p>
+        <p id="client">Client : <%= client %></p>
       </div> <!-- Remplacer les points de suspension par les coordonnées de contact -->
     </div>
     <div class="w-1/2">
       <div class="section-title">Vos coordonnées</div>
       <div class="section-content">
-        <p id="client">Client : <%= client %></p>
+        <p id="nom">Nom : <%= nom %></p>
+        <p >Email : <%= email %></p>
       </div> <!-- Remplacer les points de suspension par les coordonnées du client -->
     </div>
   </div>
@@ -253,23 +243,6 @@
       var formattedDate = day + '/' + month + '/' + year;
       return formattedDate;
     }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const nomElement = document.getElementById('nom');
-      const clientElement = document.getElementById('client');
-      const MAX_CHARACTERS = 10;
-    
-      applyLineBreak(nomElement);
-      applyLineBreak(clientElement);
-    
-      function applyLineBreak(element) {
-        const text = element.textContent;
-        if (text.length > MAX_CHARACTERS) {
-          const formattedText = text.replace(/(.{50})/g, '$1<br>');
-          element.innerHTML = formattedText;
-        }
-      }
-    });
   </script>
 </body>
 </html>
