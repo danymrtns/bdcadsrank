@@ -70,41 +70,14 @@
   </style>
 </head>
 <body>
-<div class="flex h-screen">
-  <!-- Barre de navigation latérale -->
-  <div class="bg-gray-800 text-white w-1/10" style="width: 20%;">
-    <!-- Contenu de la barre de navigation -->
-    <h1>TEST</h1>
-    <div class="p-4">
-      <button id="modifierBtn" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">Modifier</button>
-      <h2 class="text-xl font-bold mb-4">Modification</h2>
-      <form id="formulaire" action="/confirmation" method="post" class="space-y-4 hidden">
-        <label for="nom" class="block text-white">Nom :</label>
-        <input type="text" id="nom" name="nom" value="<%= nom %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
-        <label for="email" class="block text-white">Email :</label>
-        <input type="email" id="email" name="email" value="<%= email %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
-        <label for="client" class="block text-white">Client :</label>
-        <input type="text" id="client" name="client" value="<%= client %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
-        <label for="montant" class="block text-white">Montant :</label>
-        <input type="number" id="montant" name="montant" value="<%= montant %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
-        <input type="submit" value="Valider" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
-      </form>
-    </div>
-  </div>
-
-  <!-- Espace de contenu -->
-  <div class="flex-grow" style="width: 80%; margin-left:20px">
     <!--Page 1/2-->
     <img src="https://adsrank.fr/wp-content/uploads/2023/03/logo_adsrank_mail.png" style="width: 200px; height: auto;" alt="Logo" class="mb-8">
 
   <div class="section">
     <div class="section-title">Bon de commande</div>
-    <div class="section-content">
-        <p>Référence : <%= orderNumber %>, Date : <%= currentDate %></p>
+    <div class="section-content">Référence et date
+        <p><%= orderNumber %></p>
+        <p><%= currentDate %></p>
     </div>
   </div>
 
@@ -117,7 +90,7 @@
           <p>Téléphone : <%= commercialTelephone %></p>
       </div> <!-- Remplacer les points de suspension par les coordonnées de contact -->
     </div>
-    <div class="w-1/2">''''
+    <div class="w-1/2">
       <div class="section-title">Vos coordonnées</div>
       <div class="section-content">
         <p id="nom">Nom : <%= nom %></p>
@@ -127,11 +100,7 @@
   </div>
 
   <div class="section">
-    <div class="section-title">Votre offre Google Ads Booster</div>
-    <p class="flex items-center section-title">
-      <img src="https://adsrank.fr/wp-content/uploads/2023/06/case-a-cocher-bleu.png" class="h-6 w-6 mr-2">
-      Gestion et optimisation de votre campagne Google Ads
-    </p>
+    <div class="section-title">Votre offre Google Ads Booster<br>Gestion et optimisation de votre campagne Google Ads</div>
     <div class="section-content">
       <table class="w-full border-collapse">
         <tr>
@@ -181,11 +150,7 @@
     <div class="w-1/2" style="width: 50%;"> <!--Taille à revoir pour moalite et prix-->
         <div class="section-title">Modalité de règlement</div>
         <div class="section-content">
-          <p class="flex items-center">
-            <img src="https://adsrank.fr/wp-content/uploads/2023/06/case-a-cocher.png" class="h-6 w-6 mr-2">
-            Prélèvement automatique
-          </p>
-
+        <p>Prélèvement automatique</p>
         <button class="bg-yellow-300 text-black px-4 py-2 rounded" style="margin-top:10px; padding: 10px 40px 10px 40px">
             <a href="https://www.example.com" >
                 <i class="fas fa-lock mr-2"></i>
@@ -282,34 +247,24 @@
       <p>Paraphe<br><br></p>
     </div>
   </div>
-  
-  </div>
-</div>
-<script>
-  function getCurrentDate() {
-    var date = new Date();
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-    
-    // Ajouter un zéro devant les jours/mois < 10
-    if (day < 10) {
-      day = '0' + day;
+  <script>
+    function getCurrentDate() {
+      var date = new Date();
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      
+      // Ajouter un zéro devant les jours/mois < 10
+      if (day < 10) {
+        day = '0' + day;
+      }
+      if (month < 10) {
+        month = '0' + month;
+      }
+      
+      var formattedDate = day + '/' + month + '/' + year;
+      return formattedDate;
     }
-    if (month < 10) {
-      month = '0' + month;
-    }
-    
-    var formattedDate = day + '/' + month + '/' + year;
-    return formattedDate;
-  }
-
-  // JavaScript Bouton Modifier
-document.getElementById('modifierBtn').addEventListener('click', function() {
-  var formulaire = document.getElementById('formulaire');
-  formulaire.classList.toggle('hidden');
-});
-
-</script>
+  </script>
 </body>
 </html>

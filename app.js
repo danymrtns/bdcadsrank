@@ -31,6 +31,7 @@ app.get('/test', (req, res) => {
   res.render('test', { data: data });
 });
 
+
 // Route pour la page du tableau de bord
 app.get('/dashboard', (req, res) => {
   fs.readFile(formFilePath, 'utf8', (err, data) => {
@@ -97,6 +98,7 @@ function generateOrderNumber() {
 // Page de confirmation qui affiche les informations envoyées
 app.post('/confirmation', (req, res) => {
   const { nom, email, client, montant } = req.body;
+
   const montantNum = parseFloat(montant);
   // Date
   const currentDate = new Date().toLocaleDateString('fr-FR');
@@ -107,7 +109,13 @@ app.post('/confirmation', (req, res) => {
   const totalAmount = montantNum + vat;
   const monthlyPayment = totalAmount;
 
-  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber });
+  // Extraire les informations du commercial
+  const commercialInfo = client.split('-');
+  const commercialNom = commercialInfo[0];
+  const commercialEmail = commercialInfo[1];
+  const commercialTelephone = commercialInfo[2];
+
+  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber, commercialNom, commercialEmail, commercialTelephone });
 });
 
 // Suppression data
