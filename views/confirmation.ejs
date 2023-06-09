@@ -40,10 +40,10 @@
     }
     .total {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
       text-transform: uppercase;
       background-color: rgb(228, 235, 248);
-      border-top: solid black;
+      border-top: solid 2px black;
     }
     .highlight{
         background-color: #0d2242;
@@ -52,20 +52,20 @@
 
     .cdv{
         background-color: rgb(243, 243, 243);
-        font-weight: 600;
+        font-weight: 500;
+        font-size: 12px;
     }
 
     .footer {
       font-size: 12px;
-      margin-top: 50px;
+      border-bottom: solid black;
+    }
+    .footer2 {
+      font-size: 12px;
+      margin-top: 20px;
       border-bottom: solid black;
     }
 
-    .empty-box {
-      border: 2px solid black;
-      width: 200px;
-      height: 100px;
-    }
 
   </style>
 </head>
@@ -94,10 +94,11 @@
         <input type="submit" value="Valider" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
       </form>
     </div>
+    <button onclick="printDiv('printableArea')">Imprimer</button>
   </div>
-
+  <div id="printableArea">
   <!-- Espace de contenu -->
-  <div class="flex-grow" style="width: 80%; margin-left:20px">
+  <div class="flex-grow" style="width: 100%;">
     <!--Page 1/2-->
     <img src="https://adsrank.fr/wp-content/uploads/2023/03/logo_adsrank_mail.png" style="width: 200px; height: auto;" alt="Logo" class="mb-8">
 
@@ -117,7 +118,7 @@
           <p>Téléphone : <%= commercialTelephone %></p>
       </div> <!-- Remplacer les points de suspension par les coordonnées de contact -->
     </div>
-    <div class="w-1/2">''''
+    <div class="w-1/2">
       <div class="section-title">Vos coordonnées</div>
       <div class="section-content">
         <p id="nom">Nom : <%= nom %></p>
@@ -138,40 +139,40 @@
           <th class="border px-4 py-2 highlight" colspan="2">Votre offre</th>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Ciblage des mots clés les plus stratégiques</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Ciblage des mots clés les plus stratégiques</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Rédaction &amp; optimisation des annonces</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Rédaction &amp; optimisation des annonces</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Modification illimitée de vos annonces ou mots clés</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Modification illimitée de vos annonces ou mots clés</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Niveau d’accompagnement Pro<br>> Expert dédié à votre entreprise avec suivi personnalisé</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Niveau d’accompagnement Pro<br>> Expert dédié à votre entreprise avec suivi personnalisé</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Rapport mensuel détaillé</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Rapport mensuel détaillé</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Diffusion et optimisation de vos campagnes au quotidien</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Diffusion et optimisation de vos campagnes au quotidien</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Offre sans engagement, résiliable à tout moment</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Offre sans engagement, résiliable à tout moment</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Création du compte et frais d’ouverture de campagne</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Création du compte et frais d’ouverture de campagne</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
         <tr>
-          <td class="border px-4 py-2" style="width: 80%;">Frais de dossier offert</td>
-          <td class="border px-4 py-2" style="width: 20%; text-align: right">Inclus</td>
+          <td class="border px-4 py-1" style="width: 80%;">Frais de dossier offert</td>
+          <td class="border px-4 py-1" style="width: 20%; text-align: right">Inclus</td>
         </tr>
       </table>
     </div>
@@ -198,20 +199,20 @@
         <div class="section-content">
         <table class="w-full border-collapse" style="text-align: right">
             <tr>
-            <td class="px-4 py-2">Sous-total / mois</td>
-            <td class="px-4 py-2"style="width: 40%;"><%= montant %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-1">Sous-total / mois</td>
+            <td class="px-4 py-1"style="width: 40%;"><%= montant %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr>
-            <td class="px-4 py-2">TVA 20% / mois</td>
-            <td class="px-4 py-2"><%= vat.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-1">TVA 20% / mois</td>
+            <td class="px-4 py-1"><%= vat.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr>
-            <td class="px-4 py-2">Total / mois</td>
-            <td class="px-4 py-2"><%= totalAmount.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-1">Total / mois</td>
+            <td class="px-4 py-1"><%= totalAmount.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr class="total">
-            <td class="px-4 py-2">Net à payer/mois</td>
-            <td class="px-4 py-2"><%= monthlyPayment.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
+            <td class="px-4 py-1">Net à payer/mois</td>
+            <td class="px-4 py-1"><%= monthlyPayment.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
         </table>
         <!-- <p class="text-2xl font-bold mt-4">NET À PAYER / MOIS</p> -->
@@ -219,26 +220,26 @@
     </div>
   </div>
   <div class="footer">
-    <p class="section-title2">Cette proposition commerciale est valable 1 mois à compter de sa date d’émission.<br>Passé ce délai, la présente proposition devient caduque.</p>
+    <p style="font-weight: 600; font-size:14px; padding-bottom:10px;">Cette proposition commerciale est valable 1 mois à compter de sa date d’émission.<br>Passé ce délai, la présente proposition devient caduque.</p>
   </div>
-  <div class="flex justify-between mt-8 ">
+  <div class="flex justify-between mt-4 ">
     <div class="w-1/2" style="width: 70%;">
-      <p>AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
+      <p style="font-size: 14px;">AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
     </div>
-    <div class="w-1/2 border-4 border-black" style="width: 30%; padding:10px;">
+    <div class="w-1/2 border-2 border-black" style="width: 30%; padding:5px;">
       <p>Paraphe<br><br></p>
     </div>
   </div>
 
 <!--Page 2/2-->
-  <div class="sectioncdv" style="margin-top: 100px;">
+  <div class="sectioncdv" style="margin-top: 50px;">
     <div class="section-content">
       <table class="w-full border-collapse">
         <tr>
-          <th class="border px-4 py-2 cdv section-title2" style="text-decoration: underline ; padding-top: 30px;" colspan="2">CONDITIONS GENERALES DE VENTE</th>
+          <th class="border px-4 py-2 cdv section-title2 " style="text-decoration: underline ; padding-top: 15px;" colspan="2">CONDITIONS GENERALES DE VENTE</th>
         </tr>
         <tr>
-          <td class="border px-4 py-2 cdv" style="width: 100%; padding-bottom: 30px;">1) Le bon de commande signé par le client accepte le plein droit à l'adhésion des présentes conditions générales.
+          <td class="border px-4 py-2 cdv" style="width: 100%; padding-bottom: 15px;">1) Le bon de commande signé par le client accepte le plein droit à l'adhésion des présentes conditions générales.
             <br>2) Le choix des offres est pris par un conseiller de la Société ADSRANK par courrier, téléphone, mails ou en la présence de la société cliente. Le signataire du présent contrat reconnaît et déclare formellement avoir tout pouvoir pour engager la personne ou l'entreprise bénéficiaire de cet achat d'espace qui sera tenu à son paiement.
             <br>3) Le paiement de l'annonce doit se faire dans les 5 jours ouvrables après réception de ce contrat. Ceci par les moyens décrits ci-dessus (prélèvement automatique). Tout incident et/ou retard de paiement à l'échéance entraîneront de plein droit l'application d'une pénalité de retard égale à 5 % par mois des sommes due, ainsi que la facturation de l'ensemble des frais financiers et frais de recouvrement correspondants, sans préjudice de la suspension et/ou de la résiliation du présent contrat. Si le client ne règle pas entièrement sa facture aux échéances prévues, ADSRANK se réserve le droit d'arrêter les services vendus sans délais à partir du premier rappel effectué sous forme écrite (email ou lettre). L'offre annoncé sur ce contrat a une durée limitée dans le temps de 1 mois après réception de celui-ci. Au-delà le conseiller devra effectuer une vérification et l'ajuster si besoin.
             <br>4) Le client affirme avoir pris connaissance du système de fonctionnement Adwords de Google au PPC (coût par clic).
@@ -272,17 +273,17 @@
       </div>
     </div>
   </div>
-  <div class="footer">
+  <div class="footer2">
   </div>
-  <div class="flex justify-between mt-8 ">
+  <div class="flex justify-between mt-4 ">
     <div class="w-1/2" style="width: 70%;">
-      <p>AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
+      <p style="font-size: 14px;">AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
     </div>
-    <div class="w-1/2 border-4 border-black" style="width: 30%; padding:10px;">
+    <div class="w-1/2 border-2 border-black" style="width: 30%; padding:5px;">
       <p>Paraphe<br><br></p>
     </div>
   </div>
-  
+</div>
   </div>
 </div>
 <script>
@@ -309,6 +310,17 @@ document.getElementById('modifierBtn').addEventListener('click', function() {
   var formulaire = document.getElementById('formulaire');
   formulaire.classList.toggle('hidden');
 });
+
+function printDiv(divName) {
+  let printContents = document.getElementById(divName).innerHTML;
+  let originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = printContents;
+
+  window.print();
+
+  document.body.innerHTML = originalContents;
+}
 
 </script>
 </body>
