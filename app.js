@@ -97,7 +97,7 @@ function generateOrderNumber() {
 
 // Page de confirmation qui affiche les informations envoyées
 app.post('/confirmation', (req, res) => {
-  const { nom, email, client, montant } = req.body;
+  const { nom, email, client, montant, url, telephone, raisonSocial } = req.body;
 
   const montantNum = parseFloat(montant);
   // Date
@@ -115,7 +115,7 @@ app.post('/confirmation', (req, res) => {
   const commercialEmail = commercialInfo[1];
   const commercialTelephone = commercialInfo[2];
 
-  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber, commercialNom, commercialEmail, commercialTelephone });
+  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber, commercialNom, commercialEmail, commercialTelephone, url, telephone, raisonSocial });
 });
 
 // Suppression data

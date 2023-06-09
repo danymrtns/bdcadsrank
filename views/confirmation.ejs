@@ -79,18 +79,28 @@
       <button id="modifierBtn" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">Modifier</button>
       <h2 class="text-xl font-bold mb-4">Modification</h2>
       <form id="formulaire" action="/confirmation" method="post" class="space-y-4 hidden">
+        <label for="raisonSocial" class="block text-white font-bold">Raison Social :</label>
+        <input type="text" id="raisonSocial" name="raisonSocial" value="<%= raisonSocial %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
+
         <label for="nom" class="block text-white">Nom :</label>
         <input type="text" id="nom" name="nom" value="<%= nom %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
+
+        <label for="telephone" class="block text-white">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" value="<%= telephone %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
+
         <label for="email" class="block text-white">Email :</label>
         <input type="email" id="email" name="email" value="<%= email %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
+
+        <label for="url" class="block text-white">URL :</label>
+        <input type="text" id="url" name="url" value="<%= url %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
+
+
         <label for="client" class="block text-white">Client :</label>
         <input type="text" id="client" name="client" value="<%= client %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
+
         <label for="montant" class="block text-white">Montant :</label>
         <input type="number" id="montant" name="montant" value="<%= montant %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
-        
+
         <input type="submit" value="Valider" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
       </form>
     </div>
@@ -121,8 +131,11 @@
     <div class="w-1/2">
       <div class="section-title">Vos coordonnées</div>
       <div class="section-content">
+        <p >Raison Social : <%= raisonSocial %></p>
         <p id="nom">Nom : <%= nom %></p>
+        <p >Téléphone : <%= telephone %></p>
         <p >Email : <%= email %></p>
+        <p >URL : <%= url %></p>
       </div> <!-- Remplacer les points de suspension par les coordonnées du client -->
     </div>
   </div>
