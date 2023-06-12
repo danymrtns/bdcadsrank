@@ -46,17 +46,17 @@ app.get('/dashboard', (req, res) => {
 });
 
 // Route pour la page du tableau de bord
-app.get('/test', (req, res) => {
-  fs.readFile(formFilePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.sendStatus(500);
-    } else {
-      const formData = JSON.parse(data);
-      res.render('test', { formData: formData,  data: data });
-    }
-  });
-});
+// app.get('/test', (req, res) => {
+//   fs.readFile(formFilePath, 'utf8', (err, data) => {
+//     if (err) {
+//       console.error(err);
+//       res.sendStatus(500);
+//     } else {
+//       const formData = JSON.parse(data);
+//       res.render('test', { formData: formData,  data: data });
+//     }
+//   });
+// });
 
 app.post('/submit', (req, res) => {
   const { nom, email } = req.body;
@@ -81,7 +81,7 @@ app.post('/submit', (req, res) => {
           console.error(err);
           res.sendStatus(500);
         } else {
-          res.redirect('/test');
+          res.redirect('/dashboard');
         }
       });
     }

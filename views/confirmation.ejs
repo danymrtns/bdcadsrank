@@ -58,14 +58,52 @@
 
     .footer {
       font-size: 12px;
-      border-bottom: solid black;
+      border-bottom: 2px solid black;
     }
     .footer2 {
       font-size: 12px;
       margin-top: 20px;
-      border-bottom: solid black;
+      border-bottom: 2px solid black;
     }
 
+    #printableArea{
+      background-color: red;
+      margin: 50px 50px 50px 50px;
+    }
+    @media print {
+      header,
+      footer,
+      .sidebar {
+        display: none;
+      }
+    
+      body {
+        margin: 50px;
+        padding: 20px;
+      }
+    
+      .section-title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    
+      .section-content {
+        font-size: 12px;
+      }
+    
+      .total {
+        font-size: 16px;
+      }
+    
+      .highlight {
+        background-color: transparent;
+        color: black;
+      }
+
+      .payerboutton{
+        background-color: yellow;
+      }
+    }
 
   </style>
 </head>
@@ -104,9 +142,16 @@
         <input type="submit" value="Valider" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
       </form>
     </div>
-    <button onclick="printDiv('printableArea')">Imprimer</button>
+    <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" onclick="printDiv('printableArea')">Imprimer</button>
+    <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" onclick="enregistrerFormulaire('formulaire')">Enregistrer</button>
+    <!-- <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">Envoyer</button> -->
+
+    <button type="submit" value="Valider" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700" onclick="saveFormDataToJson()">youpu</button>
+
+
   </div>
   <div id="printableArea">
+
   <!-- Espace de contenu -->
   <div class="flex-grow" style="width: 100%;">
     <!--Page 1/2-->
@@ -120,7 +165,7 @@
   </div>
 
   <div class="section flex">
-    <div class="w-1/2">
+    <div class="w-1/2" style="width: 70%;">
       <div class="section-title">Votre contact</div>
       <div class="section-content">
           <p>Nom : <%= commercialNom %></p>
@@ -200,7 +245,7 @@
             Prélèvement automatique
           </p>
 
-        <button class="bg-yellow-300 text-black px-4 py-2 rounded" style="margin-top:10px; padding: 10px 40px 10px 40px">
+        <button class="bg-yellow-300 text-black px-4 py-2 rounded payerboutton" style="margin-top:10px; padding: 10px 40px 10px 40px">
             <a href="https://www.example.com" >
                 <i class="fas fa-lock mr-2"></i>
                 Payer
@@ -224,7 +269,7 @@
             <td class="px-4 py-1"><%= totalAmount.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
             <tr class="total">
-            <td class="px-4 py-1">Net à payer/mois</td>
+            <td class="px-4 py-1">Net à payer / mois</td>
             <td class="px-4 py-1"><%= monthlyPayment.toFixed(2) %> €</td> <!-- Remplacer les points de suspension par le montant correspondant -->
             </tr>
         </table>
@@ -237,7 +282,7 @@
   </div>
   <div class="flex justify-between mt-4 ">
     <div class="w-1/2" style="width: 70%;">
-      <p style="font-size: 14px;">AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
+      <p style="font-size: 12px; font-weight: light">AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
     </div>
     <div class="w-1/2 border-2 border-black" style="width: 30%; padding:5px;">
       <p>Paraphe<br><br></p>
@@ -263,10 +308,10 @@
             <br>7) Le présent contrat est sans engagement et résiliable à tout moment par simple voie postale avec AR. Tout mois démarré sera dû dans son intégralité et toute demande de résiliation rentrera en vigueur à la fin du mois en cours.
             <br>8) Le client accepte par la signature de ce bon de commande de recevoir les newsletters ou offres promotionnelles
             de ADSRANK
-            <br>9) Le client affirme avoir lu l'ensemble des conditions générales de vente indiquées à l'adresse: https://adsrank.fr/cev/</td>
+            <br>9) Le client affirme avoir lu l'ensemble des conditions générales de vente indiquées à l'adresse: <a href="http://adsrank.fr/cev/">https://adsrank.fr/cev/</a></td>
         </tr>
       </table>
-      <p style="margin-top: 20px;">Le Client reconnaît que l'envoi du présent Bon de Commande par télécopie ou mail a la même valeur que celle
+      <p style="margin-top: 20px; font-size: 12px;">Le Client reconnaît que l'envoi du présent Bon de Commande par télécopie ou mail a la même valeur que celle
         accordée à l'original. Le présent Bon de Commande est formé à compter de sa date de signature et prévaut sur les
         conditions générales et/ou particulières du Client, les correspondances et/ou les propositions commerciales
         antérieures relatives au même objet que le présent Bon de Commande. Toute modification manuscrite des
@@ -277,11 +322,11 @@
 
     <div class="flex justify-between mt-8 ">
       <div class="w-1/2 border border-black" style="width: 48%; padding:10px">
-        <p class="">Cadre réservé à AdsRank</p>
+        <p class=""><i>Cadre réservé à AdsRank</i></p>
       </div>
       <div class="w-1/2 border border-black" style="width: 48%; padding:10px;">
-        <p class="">Cachet et signature du client<br></p>
-        <p class="">Avec la mention "Lu et approuvé"<br><br><br><br><br></p>
+        <p class=""><strong>Cachet et signature du client</strong><br></p>
+        <p class=""><i>Avec la mention "Lu et approuvé"</i><br><br><br><br></p>
         <p class="">Le : ___________________________</p>
       </div>
     </div>
@@ -290,7 +335,7 @@
   </div>
   <div class="flex justify-between mt-4 ">
     <div class="w-1/2" style="width: 70%;">
-      <p style="font-size: 14px;">AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
+      <p style="font-size: 12px; font-weight: light">AdsRank SAS, 29 rue Bichat 75010 Paris - RCS Paris 850 136 375<br>N° de TVA intra-communautaire : FR68850136375<br>Page 2/2</p>
     </div>
     <div class="w-1/2 border-2 border-black" style="width: 30%; padding:5px;">
       <p>Paraphe<br><br></p>
@@ -334,6 +379,63 @@ function printDiv(divName) {
 
   document.body.innerHTML = originalContents;
 }
+
+function enregistrerFormulaire() {
+  var formData = {
+    raisonSocial: document.getElementById('raisonSocial').value,
+    nom: document.getElementById('nom').value,
+    telephone: document.getElementById('telephone').value,
+    email: document.getElementById('email').value,
+    url: document.getElementById('url').value,
+    client: document.getElementById('client').value,
+    montant: document.getElementById('montant').value
+  };
+
+  var jsonData = JSON.stringify(formData, null, 2);
+
+  var fs = require('fs');
+  fs.writeFile('data/formulaire.json', jsonData, function(err) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log('Le formulaire a été enregistré avec succès.');
+  });
+}
+
+function saveFormDataToJson() {
+  const formulaire = document.getElementById('formulaire');
+  const formData = new FormData(formulaire);
+  const formObject = {};
+
+  for (let [key, value] of formData.entries()) {
+    formObject[key] = value;
+  }
+
+  const jsonData = JSON.stringify(formObject);
+
+  // Envoie les données JSON au serveur
+  fetch('/save-form-data', {
+    method: 'POST',
+    headers: {
+      'Content-Type': '/data/formulaire.json'
+    },
+    body: jsonData
+  })
+  .then(response => {
+    if (response.ok) {
+      // Succès - rediriger vers la page de confirmation
+      window.location.href = '/confirmation';
+    } else {
+      // Erreur - afficher un message d'erreur ou effectuer une autre action
+      console.error('Erreur lors de l\'enregistrement des données');
+    }
+  })
+  .catch(error => {
+    console.error('Erreur lors de la requête fetch', error);
+  });
+}
+
 
 </script>
 </body>
