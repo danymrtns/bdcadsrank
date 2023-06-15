@@ -7,15 +7,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
     <title>Ma page d'accueil</title>
   </head>
-  <body class="bg-indigo-900">
+  <body class="bg-indigo-50">
     <%- include('navbar'); -%>
     <div class="container mx-auto px-4 mt-8">
-      <h1 class="text-white text-4xl mb-4">Bienvenue sur ma page !</h1>
-      <p class="text-gray-300">Ceci est un exemple de page d'accueil.</p>
+      <h1 class="text-blue text-4xl mb-4">Gestionnaire de Bon de commande</h1>
+      <!-- <p class="text-gray-300">Ceci est un exemple de page d'accueil.</p>
       
 <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
   Toggle modal
-</button>
+</button> -->
 
 <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative w-full max-w-md max-h-full">
@@ -63,12 +63,12 @@
               <div class="relative z-0 w-full mb-6 group">
                 <select name="client" id="client" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
                   <option value="" disabled selected hidden></option>
-                  <option value="Mavreen BASSIN-mavreen.bassin@adsrank.fr-0141100539">Mavreen BASSIN</option>
-                  <option value="client2">Client 2</option>
-                  <option value="client3">Client 3</option>
+                  <option value="Mavreen BASSIN-mavreen.bassin@adsrank.fr-01.41.10.05.39">Mavreen BASSIN</option>
+                  <option value="client2">Agent 2</option>
+                  <option value="client3">Agent 3</option>
                   <!-- Ajoutez plus d'options ici -->
                 </select>
-                <label for="client" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Client</label>
+                <label for="client" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Agent</label>
             </div>
               <div class="relative z-0 w-full mb-6 group">
                   <input type="number" name="montant" id="amount" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
