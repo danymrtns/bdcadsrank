@@ -8,7 +8,16 @@
     <title>Ma page d'accueil</title>
   </head>
   <body class="bg-indigo-50">
-    <%- include('navbar'); -%>
+    <nav class="bg-blue-800 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+          <h1 class="text-white text-xl">AdsRank</h1>
+          <ul class="flex space-x-4">
+            <li><a href="/" class="text-gray-300 hover:text-white">Accueil</a></li>
+            <li><a href="/dashboard" class="text-gray-300 hover:text-white">Tableau de bord</a></li>
+          </div>
+      </div>
+    </nav>
     <div class="container mx-auto px-4 mt-8">
       <h1 class="text-blue text-4xl mb-4">Gestionnaire de Bon de commande</h1>
       <!-- <p class="text-gray-300">Ceci est un exemple de page d'accueil.</p>
@@ -63,9 +72,10 @@
               <div class="relative z-0 w-full mb-6 group">
                 <select name="client" id="client" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
                   <option value="" disabled selected hidden></option>
-                  <option value="Mavreen BASSIN-mavreen.bassin@adsrank.fr-01.41.10.05.39">Mavreen BASSIN</option>
-                  <option value="client2">Agent 2</option>
-                  <option value="client3">Agent 3</option>
+                  <option value="Mavreen BASSIN-mavreen.bassin@adsrank.fr-01 41 10 05 39">Mavreen BASSIN</option>
+                  <option value="Michael Bitton-michael.bitton@adsrank.fr-01 41 10 05 45">Michael Bitton</option>
+                  <option value="Xavier Capitaine-xavier.capitaine@adsrank.fr-01 76 46 07 37">Xavier Capitaine</option>
+                  <option value="Ilane Cohen-ilane.cohen@adsrank.fr-01 76 42 02 70">Ilane Cohen</option>
                   <!-- Ajoutez plus d'options ici -->
                 </select>
                 <label for="client" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Agent</label>

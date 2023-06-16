@@ -26,11 +26,15 @@ app.get('/navbar', (req, res) => {
   res.render('/');
 });
 
+app.get('/', (req, res) => {
+  res.render('index', { navbar: 'navbar' });
+});
+
+
 // Route pour la page test
 app.get('/test', (req, res) => {
   res.render('test', { data: data });
 });
-
 
 // Route pour la page du tableau de bord
 app.get('/dashboard', (req, res) => {
@@ -115,7 +119,7 @@ app.post('/confirmation', (req, res) => {
   const commercialEmail = commercialInfo[1];
   const commercialTelephone = commercialInfo[2];
 
-  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber, commercialNom, commercialEmail, commercialTelephone, url, telephone, raisonSocial });
+  res.render('confirmation', { nom, email, client, montant: montantNum, vat, totalAmount, monthlyPayment, currentDate, orderNumber, commercialNom, commercialEmail, commercialTelephone, url, telephone, raisonSocial, navbar: 'navbar'  });
 });
 
 // Suppression data
