@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path');
+const port = 3000;
 
 const formFilePath = path.join(__dirname, 'data', 'form-data.json');
 
@@ -138,5 +139,5 @@ app.delete('/dashboard/:index', (req, res) => {
 
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log('Server started on http://localhost:${port}');
+  console.log(`Server started on http://localhost:${port}`);
 });
