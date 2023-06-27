@@ -21,21 +21,6 @@ app.get('/', (req, res) => {
   res.render('index', { data: data });
 });
 
-// Route pour la barre de navigation
-app.get('/navbar', (req, res) => {
-  res.render('/');
-});
-
-app.get('/', (req, res) => {
-  res.render('index', { navbar: 'navbar' });
-});
-
-
-// Route pour la page test
-app.get('/test', (req, res) => {
-  res.render('test', { data: data });
-});
-
 // Route pour la page du tableau de bord
 app.get('/dashboard', (req, res) => {
   fs.readFile(formFilePath, 'utf8', (err, data) => {
@@ -152,6 +137,6 @@ app.delete('/dashboard/:index', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000');
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Server started on http://localhost:${port}');
 });
