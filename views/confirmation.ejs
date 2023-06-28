@@ -129,7 +129,7 @@
 <body class="">
   <div class="flex h-screen">
     <!-- Barre de navigation latérale -->
-    <div class="bg-gray-400 text-white w-1/10" style="width: 80%;">
+    <div class="bg-blue-50 w-1/10" style="width: 80%;">
       <!-- Contenu de la barre de navigation -->
 
       <div class="p-4">
@@ -137,29 +137,29 @@
         <button id="modifierBtn"
           class="bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-300">Modifier</button><br>
         <!-- <form id="formulaire" action="/submit" method="post" class="space-y-4 hidden"> #méthode reservé à la v.2#-->
-          <form id="formulaire" action="/confirmation" method="post" class="space-y-4 hidden">
-          <label for="raisonSocial" class="block text-white">Raison Social :</label>
+          <form id="formulaire" action="/confirmation" method="post" class="space-y-4 hidden" style="margin-top: 50px;">
+          <label for="raisonSocial" class="block ">Raison Social :</label>
           <input type="text" id="raisonSocial" name="raisonSocial" value="<%= raisonSocial %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
 
-          <label for="nom" class="block text-white">Nom :</label>
+          <label for="nom" class="block ">Nom :</label>
           <input type="text" id="nom" name="nom" value="<%= nom %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
 
-          <label for="telephone" class="block text-white">Téléphone :</label>
+          <label for="telephone" class="block ">Téléphone :</label>
           <input type="tel" id="telephone" name="telephone" value="<%= telephone %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
 
-          <label for="email" class="block text-white">Email :</label>
+          <label for="email" class="block ">Email :</label>
           <input type="email" id="email" name="email" value="<%= email %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
 
-          <label for="url" class="block text-white">URL :</label>
+          <label for="url" class="block ">URL :</label>
           <input type="text" id="url" name="url" value="<%= url %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
 
           <div class="relative z-0 w-full mb-6 group">
-            <label for="client" class="block text-white">Agent</label>
+            <label for="client" class="block ">Agent</label>
             <select name="client" id="client"
               class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900"
               required>
@@ -177,7 +177,7 @@
           <!-- <label for="client" class="block text-white">Client :</label>
         <input type="text" id="client" name="client" value="<%= client %>" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900"> -->
 
-          <label for="montant" class="block text-white">Montant :</label>
+          <label for="montant" class="block">Montant H.T :</label>
           <input type="number" id="montant" name="montant" value="<%= montant %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
           <button id="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Valider les
