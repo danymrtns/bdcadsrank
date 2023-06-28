@@ -126,17 +126,18 @@
   </div>
 </nav>
 
-<body class="bg-indigo-50">
+<body class="">
   <div class="flex h-screen">
     <!-- Barre de navigation latérale -->
-    <div class="bg-blue-600 text-white w-1/10" style="width: 80%;">
+    <div class="bg-gray-400 text-white w-1/10" style="width: 80%;">
       <!-- Contenu de la barre de navigation -->
 
       <div class="p-4">
         <h1>Paramètre du Bon de commande</h1>
         <button id="modifierBtn"
-          class="bg-yellow-300 text-white py-2 px-4 rounded hover:bg-yellow-400">Modifier</button><br>
-        <form id="formulaire" action="/submit" method="post" class="space-y-4 hidden">
+          class="bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-300">Modifier</button><br>
+        <!-- <form id="formulaire" action="/submit" method="post" class="space-y-4 hidden"> #méthode reservé à la v.2#-->
+          <form id="formulaire" action="/confirmation" method="post" class="space-y-4 hidden">
           <label for="raisonSocial" class="block text-white">Raison Social :</label>
           <input type="text" id="raisonSocial" name="raisonSocial" value="<%= raisonSocial %>"
             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-900">
@@ -184,13 +185,14 @@
           <!-- <input type="submit" value="Valider les modification" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700"> -->
         </form>
         <br>
-        <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" onclick="downloadPDF()">Télécharger
-          en PDF</button>
+        <button class="bg-white border border-red-500 text-red-500 py-2 px-4 rounded hover:bg-red-500 hover:text-white" onclick="downloadPDF()">
+          Télécharger le PDF
+      </button>
 
-        <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+        <!-- <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
           onclick="enregistrerFormulaire('formulaire')">Enregistrer</button>
         <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" action="/submit">Enregistrer
-          data</button>
+          data</button> -->
       </div>
       <!-- <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" onclick="printDiv('printableArea')">Imprimer</button> -->
 
@@ -486,7 +488,7 @@
       // Configuration de la conversion en PDF
       let opt = {
         margin: 0,
-        filename: 'bon_de_commande<%= orderNumber %>.pdf',
+        filename: 'bon_de_commande <%= raisonSocial %>-<%= currentDate %>-<%= orderNumber %>.pdf',
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         logo: '/logo_adsrank_bdc.png',
