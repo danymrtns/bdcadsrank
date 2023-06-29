@@ -18,6 +18,9 @@ const app = express();
 
 const formFilePath = path.join(__dirname, "data", "form-data.json")
 
+app.use(express.static(path.join(__dirname,"views")));
+app.use(express.static(path.join(__dirname,"public")));
+
 // Middleware pour traiter les données du formulaire
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
